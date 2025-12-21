@@ -137,3 +137,24 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+# ==========================
+# REGLAS PYTHON / DJANGO
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales (Evita subir librerías pesadas)
+venv/
+env/
+.venv/
+
+# Base de datos local (Cada compañero debe tener la suya o crearla)
+db.sqlite3
+db.sqlite3-journal
+
+# Archivos de log
+*.log
+
+# Variables de entorno (YA ESTABA, PERO CONFIRMAMOS)
+.env
