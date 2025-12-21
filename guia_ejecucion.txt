@@ -1,0 +1,54 @@
+========================================================================
+GUÍA DE INICIO RÁPIDO - CÓMO EJECUTAR EL ASISTENTE
+========================================================================
+
+IMPORTANTE: Necesitas abrir 2 TERMINALES diferentes.
+No cierres ninguna mientras uses el asistente.
+
+------------------------------------------------------------------------
+TERMINAL 1: EL CEREBRO (BACKEND)
+------------------------------------------------------------------------
+1. Abre una terminal nueva.
+2. Ve a la carpeta principal:
+   cd ~/Escritorio/Asistente-Virtual-AC
+
+3. Activa el entorno virtual (verás que aparece "venv" a la izquierda):
+   source venv/bin/activate.fish
+
+4. Entra a la carpeta del código del servidor:
+   cd Assistant/backend_assistant/
+
+5. Enciende el servidor:
+   python manage.py runserver
+
+   (DEBES VER EL MENSAJE: "Starting development server at http://127.0.0.1:8000/")
+   DÉJALA ABIERTA.
+
+------------------------------------------------------------------------
+TERMINAL 2: LA CARA (FRONTEND)
+------------------------------------------------------------------------
+1. Abre OTRA pestaña o ventana de terminal nueva.
+2. Ve directamente a la carpeta del frontend (es una ruta larga):
+   cd ~/Escritorio/Asistente-Virtual-AC/Assistant/Frontend/Frontend
+
+3. Enciende la interfaz gráfica:
+   npm run dev
+
+   (DEBES VER EL MENSAJE: "Local: http://localhost:5173/")
+   DÉJALA ABIERTA.
+
+------------------------------------------------------------------------
+PASO FINAL: USARLO
+------------------------------------------------------------------------
+1. Abre tu navegador de internet (Chrome, Firefox, etc.).
+2. Escribe o pega esta dirección:
+   http://localhost:5173/
+
+¡Listo! Ya puedes hablar con tu asistente.
+
+------------------------------------------------------------------------
+CÓMO APAGAR TODO
+------------------------------------------------------------------------
+1. Ve a la Terminal 1 y presiona las teclas: Ctrl + C
+2. Ve a la Terminal 2 y presiona las teclas: Ctrl + C
+3. Cierra las terminales.

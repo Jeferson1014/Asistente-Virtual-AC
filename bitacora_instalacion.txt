@@ -1,0 +1,51 @@
+========================================================================
+BITÁCORA DE INSTALACIÓN Y REPARACIÓN - ASISTENTE VIRTUAL AC
+Fecha: 21 de Diciembre, 2025
+Sistema Operativo: Cachy Os Linux (Fish Shell)
+Python Version: 3.13
+========================================================================
+
+1. LIMPIEZA Y CLONADO
+   - Se eliminó la carpeta antigua para limpiar conflictos.
+   - Se clonó nuevamente el repositorio en: ~/Escritorio/Asistente-Virtual-AC
+
+2. CONFIGURACIÓN DEL ENTORNO VIRTUAL (BACKEND)
+   - Ubicación: ~/Escritorio/Asistente-Virtual-AC
+   - Comando creación: python -m venv venv
+   - Comando activación: source venv/bin/activate.fish
+
+3. INSTALACIÓN DE DEPENDENCIAS (CORRECCIÓN MANUAL)
+   Nota: El archivo requirements.txt original tenía versiones incompatibles con Python 3.13.
+   Se instalaron las versiones modernas manualmente con los siguientes comandos:
+
+   > pip install --upgrade pip setuptools wheel
+   > pip install django
+   > pip install djangorestframework
+   > pip install python-dotenv
+   > pip install requests
+   > pip install django-cors-headers   (Faltaba en la instalación manual inicial)
+   > pip install groq                  (Para la IA)
+   > pip install youtube-search-python (Para búsquedas de video)
+
+   *Nota:* Se omitió 'fastavro' estricto para evitar error de compilación de wheels.
+
+4. CONFIGURACIÓN DEL BACKEND
+   - Ubicación: ~/Escritorio/Asistente-Virtual-AC/Assistant/backend_assistant
+   - Archivo .env: Se copió de .env.example y se agregó la GROQ_API_KEY.
+   - Base de Datos: Se ejecutó 'python manage.py migrate' exitosamente.
+
+5. CONFIGURACIÓN DEL FRONTEND
+   - Ubicación: ~/Escritorio/Asistente-Virtual-AC/Assistant/Frontend/Frontend
+   - Gestor de paquetes: Node.js (npm).
+   - Instalación: Se ejecutó 'npm install'.
+
+6. CORRECCIÓN DE ERROR "localStorage" EN VITE
+   - Archivo modificado: vite.config.js
+   - Cambio realizado: Se comentaron (desactivaron) las líneas referentes a "VueDevTools"
+     tanto en el 'import' como en la sección de 'plugins'.
+     Esto solucionó el cierre inesperado de la terminal al iniciar el servidor.
+
+ESTADO FINAL:
+- Backend: Operativo en puerto 8000.
+- Frontend: Operativo en puerto 5173.
+- Conexión: Exitosa.
