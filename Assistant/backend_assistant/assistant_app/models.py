@@ -18,3 +18,18 @@ class Tarea(models.Model):
 
     def __str__(self):
         return f"{self.nombre} - {self.usuario.nombre}"
+class Conversacion(models.Model):
+    titulo = models.CharField(max_length=200, default="Nueva conversación")
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Chat {self.id}: {self.titulo}"
+
+class Mensaje(models.Model):
+    conversacion = models.ForeignKey(Conversacion, related_name='mensajes', on_delete=models.CASCADE)
+    remitente = models.CharField(max_length=50)
+    texto = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.remitente}: {self.texto[:20]}..."

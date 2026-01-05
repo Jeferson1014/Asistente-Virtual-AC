@@ -1,6 +1,15 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import UsuarioViewSet, TareaViewSet, usuario_tarea, lenguaje_natural, api_overview, assistant_psycology
+from .views import (
+    UsuarioViewSet, 
+    TareaViewSet, 
+    usuario_tarea, 
+    lenguaje_natural, 
+    api_overview, 
+    assistant_psycology,
+    listar_conversaciones,
+    obtener_detalle_conversacion
+    )
 
 router = DefaultRouter()
 router.register(r'usuarios', UsuarioViewSet)
@@ -12,4 +21,6 @@ urlpatterns = [
     path('usuarios-tareas/', usuario_tarea, name='usuarios_tareas'),
     path('front/', lenguaje_natural, name='coneccion_directa'),
     path('assistant/', assistant_psycology, name='assistant_psycology'),
+    path('conversaciones/', listar_conversaciones),
+    path('conversaciones/<int:chat_id>/', obtener_detalle_conversacion),
 ]
