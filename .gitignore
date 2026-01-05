@@ -148,7 +148,7 @@ __pycache__/
 venv/
 env/
 .venv/
-
+venv2/
 # Base de datos local (Cada compañero debe tener la suya o crearla)
 db.sqlite3
 db.sqlite3-journal
